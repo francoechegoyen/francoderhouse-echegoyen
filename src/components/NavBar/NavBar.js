@@ -30,6 +30,7 @@ handleClick = () => {
                        )
                     })}
                 </ul>
+                <button className="btn">Ingresar</button>
                 <div className="carrito">
                 <CartHover />
                 </div>
