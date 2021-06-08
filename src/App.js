@@ -1,7 +1,6 @@
 import './App.css';
 import Navbar from './components/NavBar/NavBar';
-import Greeting from './components/ItemListContainer';
-import HomeContainer from "./containers/HomeContainer";
+import Greeting from './components/ItemListContainer/ItemListContainer';
 
 const App = props => {
 
@@ -9,7 +8,6 @@ const App = props => {
     <div className="App">
       <Navbar />
       <Greeting />
-      <HomeContainer />
   </div>
   );
 }

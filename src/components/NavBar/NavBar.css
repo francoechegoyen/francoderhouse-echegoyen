@@ -91,16 +91,10 @@
     transition: all 0.2s ease-out;
 }
 
-.cart {
+.cart{
     font-size: 1.5rem;
-    color: rgb(17, 17, 17);
-    margin-right: 50px;
-  }
-
-  .cart:hover {
-    font-weight: bold;
-    transition: all 0.2s ease-out;
-  }
+    margin-right: 5px;
+}
 
 @media screen and (max-width: 960px) {
     .NavbarItems {

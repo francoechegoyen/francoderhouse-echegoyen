@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { MenuItems } from "./MenuItems";
-import { Button } from "../Button";
+import CartHover from "../cartcomponent/CartHover";
+import { Button } from "../button/Button";
 import './NavBar.css';
 
 class NavBar extends Component {
@@ -28,8 +29,10 @@ handleClick = () => {
                         </li>
                        )
                     })}
-
                 </ul>
+                <div className="carrito">
+                <CartHover />
+                </div>
             </nav>
         )
     }
