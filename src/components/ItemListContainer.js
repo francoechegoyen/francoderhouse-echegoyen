@@ -4,12 +4,12 @@ import './ItemListContainer.css';
 
 class Greeting extends React.Component {
     static defaultProps = {
-      name: 'Tutora'
+      name: 'Visitante'
     }
 
     render() {
       return (
-        <h1 className="contenedorPrincipal">¡Hola {this.props.name}, esto se va a editar proximamente!</h1>
+        <h1 className="contenedorPrincipal">¡Estimado/a {this.props.name}, esto se va a editar proximamente!</h1>
       )
     }
   }

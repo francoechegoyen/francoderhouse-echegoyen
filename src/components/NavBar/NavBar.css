@@ -172,7 +172,7 @@
         color: #fff;
         transition: 250ms;
     }
-    button{
+    .NavbarItems button{
         display:none;
     }
     .carrito {

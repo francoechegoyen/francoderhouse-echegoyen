@@ -1,0 +1,101 @@
+.cajaBotones{
+  display: flex;
+  height: 50px;
+  align-items: center;
+  justify-content: center;
+}
+.boton1 {
+  padding: 8px 20px;
+  background: #3acbf7;
+  border-radius: 4px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+.boton1:hover {
+  padding: 8px 20px;
+  transition: all 0.3s ease-out;
+  background: rgb(110, 94, 254);
+  color: #fff;
+  transition: 250ms;
+}
+.boton2 {
+  padding: 8px 20px;
+  background: rgb(197, 103, 103);
+  border-radius: 4px;
+  color: #fff;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+.boton2:hover {
+  padding: 8px 20px;
+  transition: all 0.3s ease-out;
+  background: rgb(218, 33, 33);
+  color: #fff;
+  transition: 250ms;
+}
+.btn-wrapper {
+    background-color: blue;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    color: #fff;
+  }
+  .remove-cart-btn {
+    background-color: red;
+    margin-top: 8px;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    color: #fff;
+  }
+  .img-wrapper img {
+    width: 135px;
+  }
+  .add-to-card {
+    width: 40px;
+    position: absolute;
+    right: 7%;
+    font-size: 1.5rem;
+    top: 3.6%;
+    color: white;
+  }
+  .data {
+    position: absolute;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    right: 7%;
+    top: 1.2%;
+    z-index: 1;
+    background-color: rgb(197, 103, 103);
+    padding: 4px;
+    color: #fff;
+    border-radius: 50%;
+  }
+
+  @media screen and (max-width: 960px) {
+    .add-to-card {
+      width: 40px;
+      position: absolute;
+      right: 10%;
+      font-size: 1.5rem;
+      top: 3.6%;
+      color: white;
+    }
+    .data {
+      position: absolute;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.8rem;
+      right: 10%;
+      top: 1.2%;
+      z-index: 1;
+      background-color: rgb(197, 103, 103);
+      padding: 4px;
+      color: #fff;
+      border-radius: 50%;
+    }
+  }

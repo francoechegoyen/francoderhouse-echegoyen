@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { MenuItems } from "./MenuItems";
 import { Button } from "../Button";
-import CartComponent from "../CartWidget";
 import './NavBar.css';
 
 class NavBar extends Component {
@@ -31,11 +30,6 @@ handleClick = () => {
                     })}
 
                 </ul>
-                <Button>Ingresar</Button>
-                <div className="carrito">
-                  <CartComponent
-                  />
-                </div>
             </nav>
         )
     }
