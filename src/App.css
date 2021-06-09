@@ -11,3 +11,19 @@
   text-align: center;
 }
 
+.contenedorPrincipal {
+  display: flex;
+  padding: 30px;
+  font-size: 2rem;
+  justify-content: center;
+}
+
+@media screen and (max-width: 960px) {
+  .contenedorPrincipal {
+      display: flex;
+      padding: 30px;
+      font-size: 2rem;
+      justify-content: center;
+      text-align: center;
+  }
+  }

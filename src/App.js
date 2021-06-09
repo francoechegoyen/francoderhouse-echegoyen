@@ -1,13 +1,15 @@
 import './App.css';
 import Navbar from './components/NavBar/NavBar';
-import Greeting from './components/ItemListContainer/ItemListContainer';
+import { ItemListContainer } from './components/ItemListContainer/ItemListContainer';
 
 const App = props => {
 
   return (
     <div className="App">
       <Navbar />
-      <Greeting />
+      <div className="contenedorPrincipal">
+         <ItemListContainer texto="Esto se va a editar próximamente" />
+      </div>
   </div>
   );
 }
