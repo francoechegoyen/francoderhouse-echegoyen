@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { MenuItems } from "./MenuItems";
-import CartHover from "../cartcomponent/CartHover";
+import CartHover from "../cartcomponent/CartIcon";
 import { Button } from "../button/Button";
 import './NavBar.css';
 
