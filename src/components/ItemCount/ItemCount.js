@@ -10,8 +10,8 @@ const useStyles = makeStyles((theme) => itemCountStyle(theme));
 
 export const ItemCount = (props) => {
     const classes = useStyles();
-    const { stock, initial } = props;
-    const [count, setCount] = useState(initial);
+    const { stock, valorInicial } = props;
+    const [count, setCount] = useState(valorInicial);
     const [buttonToggle, setButtonToggle] = useState(false);
 
     const agregandoItem = (e) => {
@@ -59,7 +59,7 @@ export const ItemCount = (props) => {
                 <AddShoppingCartTwoToneIcon />
                 Agregar al carrito
                 </button>
-            {count === 10 && <h5>Stock máximo</h5>}
+                {stock === 0 ? true : false}
         </div>
     </section>
 
