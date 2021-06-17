@@ -13,28 +13,27 @@ const useStyle = makeStyles((theme) => itemStyles(theme));
 
 export const Item = props => {
     const classes = useStyle();
+    const { producto } = props;
 
-    const {id, title, description, price, pictureUrl, alt, stock} = props;
     return<>
         <Card className={classes.root}>
             <CardActionArea>
                 <CardMedia
                     component='img'
-                    image= {pictureUrl}
-                    width= '250'
-                    height= '400'
-                    title= {alt}
+                    image= {producto.picture.pictureUrl}
+                    width="200"
+                    title= {producto.picture.alt}
                 />
                 <CardContent>
-                    <Typography  component="h2" className={classes.titulo}>{title}</Typography>
-                    <Typography  color="textSecondary" component="p">{description}</Typography>
-                    <Typography  className={classes.valor}>${price}</Typography>
-                    <Typography  component="p">Stock disponible: {stock}</Typography>
-                    <Typography  component="p">ID del producto: #{id}</Typography>
+                    <Typography  component="h2" className={classes.titulo}>{producto.title}</Typography>
+                    <Typography  color="textSecondary" component="p">{producto.description}</Typography>
+                    <Typography  className={classes.valor}>${producto.price}</Typography>
+                    <Typography  variant="h6" component="p">Stock: {producto.stock}</Typography>
+                    <Typography  variant="p" component="p">ID: {producto.id}</Typography>
                 </CardContent>
             </CardActionArea>
             <CardActions className={classes.cardAction}>
-                <ItemCount stock={stock} valorInicial={1}/>
+                <ItemCount stock={producto.stock} valorInicial={1}/>
             </CardActions>
         </Card>
     </>
