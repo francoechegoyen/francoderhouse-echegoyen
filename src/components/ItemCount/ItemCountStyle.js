@@ -44,7 +44,9 @@ export const itemCountStyle = () => {
         },
         cantidadDiv:{
             display:'flex',
+            marginTop: '10px',
             columnGap: '1rem',
+            justifyContent: 'center',
             alignItems:'center'
         },
     })
