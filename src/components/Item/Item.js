@@ -7,7 +7,6 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
-import { ItemCount } from '../ItemCount/ItemCount'
 
 const useStyle = makeStyles((theme) => itemStyles(theme));
 
@@ -33,7 +32,7 @@ export const Item = props => {
                 </CardContent>
             </CardActionArea>
             <CardActions className={classes.cardAction}>
-                <ItemCount stock={producto.stock} valorInicial={1}/>
+
             </CardActions>
         </Card>
     </>

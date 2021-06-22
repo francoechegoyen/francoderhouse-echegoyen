@@ -5,7 +5,7 @@ import LocalShippingIcon from '@material-ui/icons/LocalShipping';
 import Chip from '@material-ui/core/Chip';
 import Card from '@material-ui/core/Card';
 import CardMedia from '@material-ui/core/CardMedia';
-import { ItemCount } from '../../../components/ItemCount/ItemCount';
+import { ItemCount } from '../ItemCount/ItemCount';
 import { itemDetailStyles } from './ItemDetailStyles';
 
 const useStyle = makeStyles((theme) => itemDetailStyles(theme));

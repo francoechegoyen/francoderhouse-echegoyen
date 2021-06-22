@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { ItemDetail } from './ItemDetail/ItemDetail.js'
+import { ItemDetail } from '../../components/ItemDetail/ItemDetail'
 
 const myPromiseProductDetail = () => {
     return new Promise ((resolve, reject) => {

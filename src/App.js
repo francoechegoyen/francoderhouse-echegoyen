@@ -1,6 +1,6 @@
 import './App.css';
 import Navbar from './components/NavBar/NavBar';
-import { ItemListContainer } from './components/ItemListContainer/ItemListContainer';
+import { ItemListContainer } from './screens/ItemListContainer/ItemListContainer';
 import { ItemDetailContainer } from './screens/ItemDetailContainer/ItemDetailContainer';
 
 const App = props => {
