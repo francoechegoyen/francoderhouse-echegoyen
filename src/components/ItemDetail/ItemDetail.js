@@ -38,8 +38,8 @@ export const ItemDetail = props => {
                 <Typography className={classes.precio}>Precio: ${productDetail.price}</Typography>
                 <Typography className={classes.descripcion}>{productDetail.description}</Typography>
                 <Typography variant="h6" className={classes.detalle}>Detalles:</Typography>
-                <Typography variant="h6" className={classes.detalle}> Tamaño: {productDetail.dimensions.tamano}</Typography>
-                <Typography variant="h6" className={classes.detalle}> Sabor: {productDetail.dimensions.sabor}</Typography>
+                <Typography variant="h6" className={classes.detalle}> Tamaño: {productDetail.tamano}</Typography>
+                <Typography variant="h6" className={classes.detalle}> Sabor: {productDetail.sabor}</Typography>
                 <Typography variant="h6" className={classes.detalle}> Stock disponible: {productDetail.stock}</Typography>
                 <ItemCount stock={productDetail.stock} valorInicial={1}/>
             </Grid>

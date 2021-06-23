@@ -7,6 +7,7 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
+import { Link } from 'react-router-dom';
 
 const useStyle = makeStyles((theme) => itemStyles(theme));
 
@@ -24,7 +25,9 @@ export const Item = props => {
                     title= {producto.picture.alt}
                 />
                 <CardContent>
-                    <Typography  component="h2" className={classes.titulo}>{producto.title}</Typography>
+                    <Link className={classes.titleLink} to={`/product/${producto.id}`}>
+                        {producto.title}
+                        </Link>
                     <Typography  color="textSecondary" component="p">{producto.description}</Typography>
                     <Typography  className={classes.valor}>${producto.price}</Typography>
                     <Typography  variant="h6" component="p">Stock: {producto.stock}</Typography>

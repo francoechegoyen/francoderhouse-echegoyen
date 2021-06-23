@@ -1,27 +1,27 @@
 export const MenuItems = [
    {
        title: 'Inicio',
-       url: '#',
+       url: '/',
        cName: 'nav-links'
    },
    {
     title: 'Proteínas',
-    url: '#',
+    url: '/category/proteinas',
     cName: 'nav-links'
    },
    {
     title: 'Ganadores de peso',
-    url: '#',
+    url: '/category/ganadores-de-peso',
     cName: 'nav-links'
    },
    {
     title: 'Quemadores de grasa',
-    url: '#',
+    url: '/category/quemadores',
     cName: 'nav-links'
    },
    {
-    title: 'Contacto',
-    url: '#',
+    title: 'Aminoácidos',
+    url: '/category/aminoacidos',
     cName: 'nav-links'
    },
    {
