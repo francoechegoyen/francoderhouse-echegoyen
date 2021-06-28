@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Typography, Grid } from '@material-ui/core';
 import LocalShippingIcon from '@material-ui/icons/LocalShipping';
@@ -7,6 +7,7 @@ import Card from '@material-ui/core/Card';
 import CardMedia from '@material-ui/core/CardMedia';
 import { ItemCount } from '../ItemCount/ItemCount';
 import { itemDetailStyles } from './ItemDetailStyles';
+import { FinishPurchaseButton } from '../FinalizarCompra/FinalizarCompra';
 
 const useStyle = makeStyles((theme) => itemDetailStyles(theme));
 
@@ -14,6 +15,17 @@ export const ItemDetail = props => {
 
     const classes = useStyle();
     const { productDetail } = props;
+    const [cantidadProducto, setCantidadProducto] = useState(0)
+    const [click, setClick] = useState(false)
+
+    const onAdd = cantidad => {
+        setCantidadProducto(cantidad);
+        setClick(true);
+    }
+
+    const clickCancelar = cl =>{
+        setClick(false);
+    }
 
     return<>
         <Grid container
@@ -41,7 +53,13 @@ export const ItemDetail = props => {
                 <Typography variant="h6" className={classes.detalle}> Tamaño: {productDetail.tamano}</Typography>
                 <Typography variant="h6" className={classes.detalle}> Sabor: {productDetail.sabor}</Typography>
                 <Typography variant="h6" className={classes.detalle}> Stock disponible: {productDetail.stock}</Typography>
-                <ItemCount stock={productDetail.stock} valorInicial={1}/>
+                {
+                click ?
+                    <FinishPurchaseButton clickCancelar={clickCancelar}/>
+                    :
+                    <ItemCount stock={productDetail.stock} valorInicial={1}  cantidadProducto={cantidadProducto} onAdd={onAdd}/>
+                }
+
             </Grid>
         </Grid>
     </>

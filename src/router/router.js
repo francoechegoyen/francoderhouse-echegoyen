@@ -3,6 +3,7 @@ import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import { ItemDetailContainer } from '../screens/ItemDetailContainer/ItemDetailContainer'
 import { ItemListContainer } from '../screens/ItemListContainer/ItemListContainer'
 import NavBar from '../components/NavBar/NavBar';
+import { Cart } from '../screens/Cart/Cart';
 
 export const Router = () =>{
     return <BrowserRouter>
@@ -16,6 +17,9 @@ export const Router = () =>{
             </Route>
             <Route exact path="/product/:productId">
                 <ItemDetailContainer/>
+            </Route>
+            <Route exact path="/cart">
+                <Cart/>
             </Route>
         </Switch>
     </BrowserRouter>

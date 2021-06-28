@@ -1,66 +1,48 @@
 import React, { useState } from 'react';
-import { makeStyles } from '@material-ui/core';
-import { itemCountStyle } from './ItemCountStyle';
-import RemoveRoundedIcon from '@material-ui/icons/RemoveRounded';
-import AddShoppingCartTwoToneIcon from '@material-ui/icons/AddShoppingCartTwoTone';
-import AddRoundedIcon from '@material-ui/icons/AddRounded';
+import { IconButton, Typography, Button} from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles'
+import { counterStyles } from './ItemCountStyles'
+import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
+import RemoveCircleOutlineIcon from '@material-ui/icons/RemoveCircleOutline';
+import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 
+const useStyle = makeStyles((theme) => counterStyles(theme));
 
-const useStyles = makeStyles((theme) => itemCountStyle(theme));
+export const ItemCount = props => {
+    const {stock, valorInicial, cantidadProducto, onAdd} = props;
 
-export const ItemCount = (props) => {
-    const classes = useStyles();
-    const { stock, valorInicial } = props;
-    const [count, setCount] = useState(valorInicial);
-    const [buttonToggle, setButtonToggle] = useState(false);
+    const classes = useStyle()
+    const [count, setCount] = useState(valorInicial > cantidadProducto ? valorInicial : cantidadProducto);
 
-    const agregandoItem = (e) => {
-        if (count > 0 && count <= stock) {
-            console.log(`${count} productos seleccionados`)
-        }
+    const handleChangeCount = () => {
+        setCount(count+1);
     }
-
-    const eliminoItem = () => {
-        if (count !== 0) {
-            setCount(count - 1)
-            if (count === 1) {
-                setButtonToggle(true)
-            }
-        }
+    const handleChangeDiscount = () => {
+        setCount(count-1);
     }
-
-    const agregoItem = () => {
-        if (count !== stock) {
-            setCount(count + 1)
-            setButtonToggle(false)
-        }
-    }
-
-    return <section>
-        <div className={classes.contenedorItem}>
-            <div className={classes.cantidadDiv}>
-                <label>Cantidad:</label>
-                <div className={classes.inputGroup}>
-                    <div className={classes.inputGroupPrepend}>
-                        <button onClick={e => eliminoItem()}>
-                            <RemoveRoundedIcon fontSize='2rem' />
-                        </button>
-
-                    </div>
-                    <span>{count}</span>
-                    <div className={classes.inputGroupAppend}>
-                        <button onClick={e => agregoItem()}>
-                            <AddRoundedIcon fontSize='2rem' />
-                        </button>
-                    </div>
-                </div>
+    return<div className={classes.generalContainer}>
+        <div className={classes.container}>
+            <Typography variant="h4" className={classes.counter}>{count}</Typography>
+            <div className={classes.buttonsContainer}>
+                <IconButton className={classes.counterButtons} onClick={e => handleChangeCount()} disabled={count < stock ? false : true}>
+                    <AddCircleOutlineIcon/>
+                </IconButton>
+                <IconButton className={classes.counterButtons} onClick={e => handleChangeDiscount()} disabled={count === valorInicial ? true : false}>
+                    <RemoveCircleOutlineIcon/>
+                </IconButton>
             </div>
-            <button disabled={buttonToggle} onClick={e => count === 0 ? undefined : agregandoItem()}>
-                <AddShoppingCartTwoToneIcon />
-                Agregar al carrito
-                </button>
-                {stock === 0 ? true : false}
         </div>
-    </section>
-
+        <div>
+            <div className={classes.container}>
+                <Button 
+                    className={classes.buttonCart}
+                    startIcon={<AddShoppingCartIcon/>}
+                    onClick={() => onAdd(count)}
+                    disabled={stock === 0 ? true : false}
+                >
+                    Agregar al carrito
+                </Button>
+            </div>
+        </div>
+    </div>
 }
