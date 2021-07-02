@@ -24,9 +24,4 @@ export const MenuItems = [
     url: '/category/aminoacidos',
     cName: 'nav-links'
    },
-   {
-   title: 'Ingresar',
-   url: '#',
-   cName: 'nav-links-mobile'
-  },
 ]

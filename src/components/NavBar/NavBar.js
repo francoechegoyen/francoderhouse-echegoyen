@@ -1,42 +1,43 @@
-import React, { Component } from 'react';
-import { MenuItems } from "./MenuItems";
-import CartHover from "../cartcomponent/CartIcon";
-import { Button } from "../button/Button";
-import './NavBar.css';
+import React, { useContext } from 'react';
+import { AppBar, Toolbar, Typography} from '@material-ui/core'
+import { makeStyles } from '@material-ui/core/styles'
+import { navBarStyles } from './NavBarStyles'
+import { Link } from 'react-router-dom';
+import { CartContext } from '../../Context/CartContext';
+import { CartWidget } from './CartWidget';
 
-class NavBar extends Component {
-    state = { clicked: false }
+const useStyle = makeStyles((theme) => navBarStyles(theme));
 
-handleClick = () => {
-    this.setState({ clicked: !this.state.clicked })
-}
+export const NavBar = props => {
+    const {itemsCart} = useContext(CartContext)
+    const proteinas = "proteinas"
+    const quemadores = "quemadores"
+    const ganadoresdepeso = "ganadoresdepeso"
+    const aminoacidos = "aminoacidos"
 
-    render() {
-        return(
-            <nav className="NavbarItems">
-                <h1 className="navbar-logo">NutriMax<i className="fab fa-react"></i></h1>
-                <div className="menu-icon" onClick={this.handleClick}>
-                    <i className={this.state.clicked ? 'fas fa-times' : 'fas fa-bars'}>
-                    </i>
-                </div>
-                <ul className={this.state.clicked ? 'nav-menu active' : 'nav-menu'}>
-                    {MenuItems.map((item, index) => {
-                       return (
-                        <li key={index}>
-                            <a className={item.cName} href = {item.url}>
-                                {item.title}
-                            </a>
-                        </li>
-                       )
-                    })}
+    const classes = useStyle()
+    return <>
+        <AppBar className={classes.appBar}>
+            <Toolbar className={classes.toolBar}>
+                <Typography variant='h5' className={classes.title}>
+                    <Link className={classes.titleLink} to={'/'}>NUTRIMAX</Link>
+                </Typography>
+                <ul className={classes.list}>
+                    <li>
+                        <Link className={classes.botones} to={`/category/${proteinas}`}>Proteínas</Link>
+                    </li>
+                    <li>
+                        <Link className={classes.botones} to={`/category/${quemadores}`}>Quemadores</Link>
+                    </li>
+                    <li>
+                        <Link className={classes.botones} to={`/category/${ganadoresdepeso}`}>Ganadores de peso</Link>
+                    </li>
+                    <li>
+                        <Link className={classes.botones} to={`/category/${aminoacidos}`}>Aminoácidos</Link>
+                    </li>
                 </ul>
-                <button className="btn">Ingresar</button>
-                <div className="carrito">
-                <CartHover />
-                </div>
-            </nav>
-        )
-    }
+                {itemsCart.length > 0 ? <CartWidget/> : ''}
+            </Toolbar>
+        </AppBar>
+    </>
 }
-
-export default NavBar;

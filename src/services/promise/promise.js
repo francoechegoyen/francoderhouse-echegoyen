@@ -43,7 +43,7 @@ export const myPromise = () => {
                         alt: "Ganador de peso Star Nutrition"
                     },
                     stock: 2,
-                    category: "ganadores-de-peso",
+                    category: "ganadoresdepeso",
                     freeShipping: true,
                     tamano: "1 Kilo",
                     sabor: "Chocolate"
