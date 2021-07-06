@@ -14,7 +14,7 @@ export const navBarStyles = theme => {
         },
         title:{
             flexGrow: 1,
-            fontFamily: 'Montserrat',
+            fontFamily: 'Arial',
             fontWeight: 500
         },
         titleLink:{
@@ -26,7 +26,7 @@ export const navBarStyles = theme => {
             color: '#fff',
             fontSize: '1rem',
             fontWeight: 400,
-            fontFamily: 'Montserrat',
+            fontFamily: 'Arial',
             '&:hover':{
                 color: 'rgb(201, 122, 122)',
                 backgroundColor: 'transparent',

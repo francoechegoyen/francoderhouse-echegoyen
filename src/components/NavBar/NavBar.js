@@ -5,6 +5,7 @@ import { navBarStyles } from './NavBarStyles'
 import { Link } from 'react-router-dom';
 import { CartContext } from '../../Context/CartContext';
 import { CartWidget } from './CartWidget';
+window.__MUI_USE_NEXT_TYPOGRAPHY_VARIANTS__ = true;
 
 const useStyle = makeStyles((theme) => navBarStyles(theme));
 

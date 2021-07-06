@@ -33,7 +33,6 @@ export const ItemDetail = props => {
 
     return<>
         <Grid container
-            xs={12}
             direction="row"
             justify="center"
             alignItems="center"

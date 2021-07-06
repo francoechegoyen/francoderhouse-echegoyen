@@ -1,3 +1,5 @@
+window.__MUI_USE_NEXT_TYPOGRAPHY_VARIANTS__ = true
+
 const commonWeight = {
     fontWeight: 'bold',
 }
@@ -8,7 +10,7 @@ export const itemDetailStyles = theme => {
         },
         precio:{
             fontSize: '35px',
-            fontFamily: "montserrat"
+
         },
         descripcion:{
             fontSize: '23px',
@@ -24,7 +26,7 @@ export const itemDetailStyles = theme => {
         },
         detalle:{
             fontSize: '23px',
-            fontFamily: 'montserrat',
+
             fontWeight: 'bold',
             padding: '2px'
         }

@@ -29,9 +29,9 @@ export const Item = props => {
                         {producto.title}
                         </Link>
                     <Typography  color="textSecondary" component="p">{producto.description}</Typography>
-                    <Typography  className={classes.valor}>${producto.price}</Typography>
+                    <Typography  variant="h6" component="p">${producto.price}</Typography>
                     <Typography  variant="h6" component="p">Stock: {producto.stock}</Typography>
-                    <Typography  variant="p" component="p">ID: {producto.id}</Typography>
+                    <Typography  variant="h6" component="p">ID: {producto.id}</Typography>
                 </CardContent>
             </CardActionArea>
             <CardActions className={classes.cardAction}>
