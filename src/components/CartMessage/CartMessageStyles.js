@@ -8,7 +8,7 @@ export const cartMessageStyles = theme => {
             textDecoration: 'none',
             borderRadius: '4px',
             border: 'solid 1px #7577fa',
-            fontFamily: 'Montserrat',
+            fontFamily: 'arial',
             width: '10em',
             color: '#7577fa',
             padding: '10px 8px',

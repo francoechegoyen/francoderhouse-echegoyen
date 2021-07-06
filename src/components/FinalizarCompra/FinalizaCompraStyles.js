@@ -36,7 +36,7 @@ export const finalizarCompraStyles = theme => {
             borderRadius: '4px',
             border: 'solid 2px black',
             background: 'rgb(201, 122, 122)',
-            fontFamily: 'Montserrat',
+            fontFamily: 'Arial',
             width: '10em',
             color: '#FFFFFF',
             padding: '6px',
