@@ -1,52 +1,51 @@
-import React, { createContext, useEffect, useState } from 'react';
+import React, { createContext, useState } from 'react';
 
 export const CartContext = createContext();
 
 export const CartComponentContext = props => {
 
-    const [itemsCart, setItemsCart] = useState([]);
-    const [subTotal, setSubTotal] = useState(0)
-    const [itemsQuantity, setItemsQuantity] = useState(0)
+    const [itemsCart, setItemsCart] = useState([])
+    const [subTotal, setSubTotal] = useState(0);
+    const [itemsQuantity, setItemsQuantity] = useState(0);
 
-    const IsInCart = idProducto => {
-        itemsCart.find(itemCart => itemCart.item.id === idProducto)
+
+    const calculatePrice = (price, qty) => {
+        return price * qty;
     }
 
-    const addItem = productoAgregado => {
-        setSubTotal(subTotal + (productoAgregado.item.price * productoAgregado.quantity))
-        setItemsQuantity(itemsQuantity + productoAgregado.quantity)
-        if (IsInCart(productoAgregado.item.id)){
-            const actualizarItem = itemsCart.map((itemCart) => {
-                const cantidadTotal = itemCart.quantity + productoAgregado.quantity;
-                if (itemCart.item.id === productoAgregado.item.id){
-                    return {...itemCart, quantity: cantidadTotal}
+    const addItem = order => {
+        setSubTotal(subTotal + calculatePrice(order.item.price, order.quantity));
+        setItemsQuantity(itemsQuantity + order.quantity)
+        if (itemsCart.find(item => item.item.id === order.item.id)) {
+            const updateItem = itemsCart.map((item) => {
+                const totalQty = item.quantity + order.quantity;
+                if (item.item.id === order.item.id) {
+                    return { ...item, quantity: totalQty }
                 }
-                return {itemCart}
+                return item
             })
-            setItemsCart(actualizarItem)
-        } else{
-            setItemsCart(productosAgregados => [...productosAgregados, productoAgregado])
+            setItemsCart(updateItem)
+        } else {
+            setItemsCart(orders => [...orders, order])
         }
     }
 
-    const clear = () => {
-        setItemsCart([])
-        setItemsQuantity(0)
-        setSubTotal(0)
-    }
 
     const removeItem = id => {
-        const selectRemoveItem = itemsCart.find(itemCart => itemCart.item.id === id);
-        setSubTotal(subTotal - (selectRemoveItem.item.price * selectRemoveItem.quantity))
-        setItemsQuantity(itemsQuantity - selectRemoveItem.quantity)
+        const itemToRemove = itemsCart.find(item => item.item.id === id);
+        setSubTotal(subTotal - calculatePrice(itemToRemove.item.price, itemToRemove.quantity));
+        setItemsQuantity(itemsQuantity - itemToRemove.quantity)
         setItemsCart(itemsCart.filter((item) => item.item.id !== id));
     }
 
-    useEffect(() => {
-        console.log('Carrito Actualizado:', itemsCart)
-    }, [itemsCart])
+    const clear = () => {
+        setItemsCart([]);
+        setSubTotal(0);
+        setItemsQuantity(0);
+    }
 
-    return <CartContext.Provider value={{itemsCart, addItem, clear, removeItem, subTotal, itemsQuantity}}>
+    return <CartContext.Provider value={{ addItem, removeItem, subTotal, clear, itemsCart, itemsQuantity }}>
         {props.children}
     </CartContext.Provider>
+
 }
