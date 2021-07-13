@@ -3,7 +3,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import { itemStyles } from './ItemStyles'
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
-import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
@@ -20,23 +19,20 @@ export const Item = props => {
             <CardActionArea>
                 <CardMedia
                     component='img'
-                    image= {producto.picture.pictureUrl}
+                    image= {producto.data.pictureUrl}
                     width="200"
-                    title= {producto.picture.alt}
+
                 />
                 <CardContent>
-                    <Link className={classes.titleLink} to={`/product/${producto.id}`}>
-                        {producto.title}
+                    <Typography  component="h2" className={classes.titulo}>
+                        <Link className={classes.titleLink} to={`/product/${producto.id}`}>
+                        {producto.data.title}
                         </Link>
-                    <Typography  color="textSecondary" component="p">{producto.description}</Typography>
-                    <Typography  variant="h6" component="p">${producto.price}</Typography>
-                    <Typography  variant="h6" component="p">Stock: {producto.stock}</Typography>
-                    <Typography  variant="h6" component="p">ID: {producto.id}</Typography>
+                    </Typography>
+                    <Typography  color="textSecondary" component="p">{producto.data.description}</Typography>
+                    <Typography  className={classes.precio}>${producto.data.price}</Typography>
                 </CardContent>
             </CardActionArea>
-            <CardActions className={classes.cardAction}>
-
-            </CardActions>
         </Card>
     </>
 }

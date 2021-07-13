@@ -15,52 +15,51 @@ const useStyle = makeStyles((theme) => itemDetailStyles(theme));
 export const ItemDetail = props => {
 
     const classes = useStyle();
-    const { productDetail } = props;
+    const { detalleProducto } = props;
     const [cantidadProducto, setCantidadProducto] = useState(0)
     const [click, setClick] = useState(false)
     const {addItem, removeItem} = useContext(CartContext)
 
     const onAdd = cantidad => {
-        setCantidadProducto(cantidad);
+        setCantidadProducto(cantidad); 
         setClick(true);
-        addItem({item: productDetail, quantity: cantidad});
+        addItem({item: detalleProducto, quantity: cantidad}) 
     }
 
     const clickCancelar = cl =>{
         setClick(false);
-        removeItem(productDetail.id);
+        removeItem(detalleProducto.id);
     }
 
     return<>
-        <Grid container
+        <Grid container 
+            xs={12}
             direction="row"
             justify="center"
             alignItems="center"
-            spacing={1}
+            spacing={2}
             className={classes.gridContainer}>
-            <Grid item xs={10} lg={4}>
+            <Grid item xs={12} lg={3}>
                 <Card>
                     <CardMedia
                         component='img'
-                        image= {productDetail.picture.pictureUrl}
-                        title= {productDetail.picture.alt}
+                        image= {detalleProducto.pictureUrl}
                     />
                 </Card>
             </Grid>
-            <Grid item xs={10} lg={4}>
-                <Typography variant="h4" className={classes.titulo}>{productDetail.title}</Typography>
-                {(productDetail.freeShipping) ? <Chip className={classes.envio} label='Envío gratis' icon={<LocalShippingIcon />}></Chip> : 'Consultar costo del envío' }
-                <Typography className={classes.precio}>Precio: ${productDetail.price}</Typography>
-                <Typography className={classes.descripcion}>{productDetail.description}</Typography>
-                <Typography variant="h6" className={classes.detalle}>Detalles:</Typography>
-                <Typography variant="h6" className={classes.detalle}> Tamaño: {productDetail.tamano}</Typography>
-                <Typography variant="h6" className={classes.detalle}> Sabor: {productDetail.sabor}</Typography>
-                <Typography variant="h6" className={classes.detalle}> Stock disponible: {productDetail.stock}</Typography>
+            <Grid item xs={12} lg={4}>
+            <Typography variant="h4" className={classes.titulo}>{detalleProducto.title}</Typography>
+                {(detalleProducto.freeShipping) ? <Chip className={classes.envio} label='Envío gratis' icon={<LocalShippingIcon />}></Chip> : 'Consultar costo del envío' }
+                <Typography className={classes.precio}>Precio: ${detalleProducto.price}</Typography>
+                <Typography className={classes.descripcion}>{detalleProducto.description}</Typography>
+                <Typography variant="h6" className={classes.detalle}> Tamaño: {detalleProducto.tamano}</Typography>
+                <Typography variant="h6" className={classes.detalle}> Sabor: {detalleProducto.sabor}</Typography>
+                <Typography variant="h6" className={classes.detalle}> Stock disponible: {detalleProducto.stock}</Typography>
                 {
-                click ?
+                    click ? 
                     <FinishPurchaseButton clickCancelar={clickCancelar}/>
                     :
-                    <ItemCount stock={productDetail.stock} valorInicial={1}  cantidadProducto={cantidadProducto} onAdd={onAdd}/>
+                    <ItemCount stock={detalleProducto.stock} valorInicial={1}  cantidadProducto={cantidadProducto} onAdd={onAdd}/>
                 }
 
             </Grid>

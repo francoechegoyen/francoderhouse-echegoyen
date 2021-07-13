@@ -1,26 +1,33 @@
 import React, { useEffect, useState } from 'react';
-import { ItemDetail } from '../../components/ItemDetail/ItemDetail'
+import { ItemDetail } from '../../components/ItemDetail/ItemDetail.js'
 import { useParams } from 'react-router-dom';
-import { myPromise } from '../../services/promise/promise.js';
+import { dataBase } from '../../Firebase/firebase.js';
 
 export const ItemDetailContainer = props => {
 
-    const [productDetail, setProductDetail] = useState([])
+    const [detalleProducto, setDetalleProducto] = useState([])
     const {productId} = useParams();
 
-    useEffect( () => {
-        myPromise()
-        .then(response => {
-            console.log(response)
-            setProductDetail(response.filter(element => element.id === parseInt(productId)))
-        }
-        )
-    }, [productId]);
+    useEffect(()=>{
+        const itemCollection = dataBase.collection("coleccion1");
+        const item = itemCollection.doc(productId)
+
+        item.get().then((doc) =>{
+            if (!doc.exists){
+                console.log('No existe')
+                return;
+            }
+            setDetalleProducto([{id: doc.id, ...doc.data()}])
+            debugger;
+        }).catch((error) =>{
+            console.log('Error', error)
+        })
+    }, [])
 
     return<>
         {
-            productDetail.map((detalle) => <ItemDetail productDetail={detalle}/> )
+            detalleProducto.map((detalle) => <ItemDetail detalleProducto={detalle}/> )
         }
-
+        
     </>
 }

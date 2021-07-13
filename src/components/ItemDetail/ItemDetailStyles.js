@@ -6,7 +6,8 @@ const commonWeight = {
 export const itemDetailStyles = theme => {
     return({
         gridContainer:{
-            marginTop: '20px'
+            marginTop: '20px',
+            padding: '20px'
         },
         precio:{
             fontSize: '35px',
