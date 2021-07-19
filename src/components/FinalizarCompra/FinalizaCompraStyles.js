@@ -15,7 +15,7 @@ export const finalizarCompraStyles = theme => {
         buttonAccept:{
             textDecoration: 'none',
             borderRadius: '4px',
-            border: 'solid 2px black',
+            border: 'solid 1px black',
             background: '#3acbf7',
             fontFamily: 'Arial',
             width: '15em',
@@ -34,7 +34,7 @@ export const finalizarCompraStyles = theme => {
         buttonCancel:{
             textDecoration: 'none',
             borderRadius: '4px',
-            border: 'solid 2px black',
+            border: 'solid 1px black',
             background: 'rgb(201, 122, 122)',
             fontFamily: 'Arial',
             width: '10em',

@@ -10,12 +10,12 @@ export const itemDetailStyles = theme => {
             padding: '20px'
         },
         precio:{
-            fontSize: '35px',
+            fontSize: '30px',
 
         },
         descripcion:{
             fontSize: '23px',
-            color: 'grey',
+            color: '#7D7D7D',
         },
         envio:{
         color: 'green',
@@ -27,9 +27,8 @@ export const itemDetailStyles = theme => {
         },
         detalle:{
             fontSize: '23px',
-
-            fontWeight: 'bold',
-            padding: '2px'
+            padding: '2px',
+            color: '#7D7D7D',
         }
     })
 }

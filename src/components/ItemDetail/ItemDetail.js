@@ -50,7 +50,7 @@ export const ItemDetail = props => {
             <Grid item xs={12} lg={4}>
             <Typography variant="h4" className={classes.titulo}>{detalleProducto.title}</Typography>
                 {(detalleProducto.freeShipping) ? <Chip className={classes.envio} label='Envío gratis' icon={<LocalShippingIcon />}></Chip> : 'Consultar costo del envío' }
-                <Typography className={classes.precio}>Precio: ${detalleProducto.price}</Typography>
+                <Typography className={classes.precio}>${detalleProducto.price}</Typography>
                 <Typography className={classes.descripcion}>{detalleProducto.description}</Typography>
                 <Typography variant="h6" className={classes.detalle}> Tamaño: {detalleProducto.tamano}</Typography>
                 <Typography variant="h6" className={classes.detalle}> Sabor: {detalleProducto.sabor}</Typography>

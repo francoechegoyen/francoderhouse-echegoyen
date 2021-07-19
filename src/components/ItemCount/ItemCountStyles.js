@@ -6,7 +6,7 @@ const commonJustify = {
 }
 
 const commonDirection = {
-    flexDirection: 'column',
+    flexDirection: 'row',
 }
 
 const commonAlign = {
@@ -22,7 +22,7 @@ export const counterStyles = theme => {
         generalContainer: {
             ...commonJustify,
             ...commonDirection,
-            margin: '20px 0px'
+            margin: '10px 0px'
         },
         container:{
             ...commonJustify,
@@ -36,9 +36,9 @@ export const counterStyles = theme => {
         },
         buttonCart: {
             ...commonAlign,
-            marginTop: '10px',
+            marginTop: '5px',
             color: '#FFFFFF',
-            border: 'solid 2px black',
+            border: 'solid 1px black',
             background: '#3acbf7',
             fontFamily: 'Montserrat',
             ...commonColor,

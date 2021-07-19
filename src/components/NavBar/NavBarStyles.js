@@ -1,44 +1,74 @@
-export const navBarStyles = theme => {
-    return({
-        appBar: {
-            backgroundColor: 'linear-gradient(90deg, rgb(110, 94, 254) 0%, rgba(73,56,252,1) 100%);',
-            position: 'static'
-
+export const NavBarStyles = theme => {
+    return ({
+        container: {
+            padding: '0.5rem 0.8rem 0',
+            backgroundColor: 'rgb(201, 122, 122)'
         },
-        toolBar:{
-            paddingTop: 10,
-            paddingBottom: 10,
-            paddingRight: 30,
-            paddingLeft: 30,
-            marginRight: '50px',
+        innerWrap: {
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center'
         },
-        title:{
-            flexGrow: 1,
-            fontFamily: 'Arial',
-            fontWeight: 500
+        logoCabeceraDesktop: {
+            '@media (max-width: 800px)': {
+                display: 'none'
+            }
         },
-        titleLink:{
-            textDecoration: 'none',
-            color: '#ffffff',
-            padding: 20,
+        listaContainerDesktop: {
+            '@media (max-width: 800px)': {
+                display: 'none'
+            }
         },
-        botones:{
-            color: '#fff',
+        listaCabeceraDesktop: {
+            margin: '0.5rem 0',
+            padding: '0',
+            listStyle: 'none',
+            display: 'flex',
+            justifyContent: 'space-evenly',
+            fontWeight: '500',
+            '& li': {
+                padding: '0.5rem',
+                color: '#fff',
+                cursor: 'pointer',
+                '& a':{
+                    textDecoration: 'none',
+                    color: 'inherit'
+                }
+            
+            }
+        },
+        logoCabeceraMobile: {
+            display: 'none',
+            '@media (max-width: 800px)': {
+                display: 'flex'
+            }
+        },
+        listaContainerMobile: {
+            display: 'none',
+            '@media (max-width: 800px)': {
+                display: 'flex'
+            },
+            '& > button':{
+                border: 'none',
+                background: 'none',
+                color: 'rgba(0, 0, 0, 0.36)'
+                
+            }
+        },
+                botones:{
+            color: '#7E7E7E',
             fontSize: '1rem',
             fontWeight: 400,
             fontFamily: 'Arial',
             '&:hover':{
-                color: 'rgb(201, 122, 122)',
                 backgroundColor: 'transparent',
                 textDecoration: 'underline'
             },
             textDecoration: 'none',
-            padding: '2rem',
+            padding: '1rem',
             textTransform: 'uppercase'
         },
-        list:{
-            listStyle: 'none',
-            display: 'flex'
-        }
     })
+
+
 }

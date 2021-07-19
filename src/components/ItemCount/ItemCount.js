@@ -22,13 +22,13 @@ export const ItemCount = props => {
     }
     return<div className={classes.generalContainer}>
         <div className={classes.container}>
-            <Typography variant="h4" className={classes.counter}>{count}</Typography>
             <div className={classes.buttonsContainer}>
+            <IconButton className={classes.counterButtons} onClick={e => handleChangeDiscount()} disabled={count === valorInicial ? true : false}>
+                    <RemoveCircleOutlineIcon/>
+                </IconButton>
+                <Typography variant="h5" className={classes.counter}>{count}</Typography>
                 <IconButton className={classes.counterButtons} onClick={e => handleChangeCount()} disabled={count < stock ? false : true}>
                     <AddCircleOutlineIcon/>
-                </IconButton>
-                <IconButton className={classes.counterButtons} onClick={e => handleChangeDiscount()} disabled={count === valorInicial ? true : false}>
-                    <RemoveCircleOutlineIcon/>
                 </IconButton>
             </div>
         </div>
