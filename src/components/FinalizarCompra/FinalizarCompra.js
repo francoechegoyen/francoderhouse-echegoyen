@@ -1,20 +1,36 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Card, CardContent, TextField, Button } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import { useHistory } from "react-router-dom";
-import { finalizarCompraStyles } from './FinalizaCompraStyles';
+import { finalizarCompraStyles } from './FinalizarCompraStyles'
 
 const useStyle = makeStyles((theme) => finalizarCompraStyles(theme));
-export const FinishPurchaseButton = props =>{
+
+export const FinalizarCompra = props => {
+
     const classes = useStyle();
-    const {clickCancelar} = props;
-    const history = useHistory();
-    function terminarCompra() {
-        history.push("/cart");
-      }
-    return<div className={classes.generalContainer}>
-        <div className={classes.container}>
-        <button className={classes.buttonAccept} onClick={terminarCompra}>Finalizar compra</button>
-        <button className={classes.buttonCancel} onClick={() => clickCancelar(false)}>Cancelar</button>
-        </div>
-    </div>
+    const [buyerData, setBuyerData] = useState({});
+
+    const handleChange = event => {
+        const { name, value } = event.target;
+        setBuyerData({ ...buyerData, [name]: value });        
+    }
+    
+    const submitForm = event => {
+        event.preventDefault();
+        props.addOrder(buyerData);
+    }
+
+    return <Card variant="outlined" className={classes.cardContainer}>
+        <CardContent className={classes.cardContent}>
+            <form onSubmit={submitForm}>
+                <TextField id="standard-full-width" fullWidth name="nombre" label="Nombre" required onChange={handleChange}/>
+                <TextField id="standard-full-width" fullWidth name="apellido" label="Apellido" required onChange={handleChange}/>
+                <TextField id="standard-full-width" fullWidth name= "calle" label="Calle" required onChange={handleChange} />
+                <TextField id="standard-full-width" fullWidth name="numero" label="Número" required onChange={handleChange} />                
+                <TextField id="standard-full-width" fullWidth name= "telefono" label="Teléfono" required onChange={handleChange}  />
+                <TextField id="standard-full-width" fullWidth label="Email" name= "email" required onChange={handleChange} />
+                <Button type='submit' className={classes.buttonFormulario}>ACEPTAR</Button>    
+            </form>
+        </CardContent>
+    </Card>
 }

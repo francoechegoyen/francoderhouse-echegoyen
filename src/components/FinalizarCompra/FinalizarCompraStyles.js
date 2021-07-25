@@ -47,8 +47,25 @@ export const finalizarCompraStyles = theme => {
             '&:hover':{
                 color: '#FFFFFF',
                 backgroundColor: 'red',
-            }
+            },
+            buttonFormulario:{
+            textDecoration: 'none',
+            borderRadius: '4px',
+            border: 'solid 1px black',
+            background: 'rgb(201, 122, 122)',
+            fontFamily: 'Arial',
+            width: '10em',
+            color: '#FFFFFF',
+            padding: '6px',
+            textTransform: 'uppercase',
+            textAlign: 'center',
+            margin:'10px',
+            fontSize: '0.875rem',
+            '&:hover':{
+                color: '#FFFFFF',
+                backgroundColor: 'red',
+                }
 
-        }
+        }}
     })
 }

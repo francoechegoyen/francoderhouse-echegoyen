@@ -1,51 +1,44 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useEffect, useState } from 'react';
 
 export const CartContext = createContext();
 
 export const CartComponentContext = props => {
 
-    const [itemsCart, setItemsCart] = useState([])
-    const [subTotal, setSubTotal] = useState(0);
-    const [itemsQuantity, setItemsQuantity] = useState(0);
-
-
-    const calculatePrice = (price, qty) => {
-        return price * qty;
-    }
-
-    const addItem = order => {
-        setSubTotal(subTotal + calculatePrice(order.item.price, order.quantity));
-        setItemsQuantity(itemsQuantity + order.quantity)
-        if (itemsCart.find(item => item.item.id === order.item.id)) {
-            const updateItem = itemsCart.map((item) => {
-                const totalQty = item.quantity + order.quantity;
-                if (item.item.id === order.item.id) {
-                    return { ...item, quantity: totalQty }
-                }
-                return item
-            })
-            setItemsCart(updateItem)
+    const [itemsCart, setItemsCart] = useState([]);
+    const [subTotal, setSubTotal] = useState(0)  
+    const [itemsQuantity, setItemsQuantity] = useState(0)   
+    
+    const addItem = productoAgregado => {
+        setSubTotal(subTotal + (productoAgregado.item.price * productoAgregado.quantity))
+        setItemsQuantity(itemsQuantity + productoAgregado.quantity)
+        const producto = itemsCart.find(itemCart => itemCart.item.id === productoAgregado.item.id)
+        if (producto){
+            const actualizarItem = producto.quantity + productoAgregado.quantity
+            producto.quantity = actualizarItem
+            setItemsCart(itemsCart)   
         } else {
-            setItemsCart(orders => [...orders, order])
-        }
-    }
-
-
-    const removeItem = id => {
-        const itemToRemove = itemsCart.find(item => item.item.id === id);
-        setSubTotal(subTotal - calculatePrice(itemToRemove.item.price, itemToRemove.quantity));
-        setItemsQuantity(itemsQuantity - itemToRemove.quantity)
-        setItemsCart(itemsCart.filter((item) => item.item.id !== id));
+        setItemsCart(productosAgregados => [...productosAgregados, productoAgregado])
+        }   
     }
 
     const clear = () => {
-        setItemsCart([]);
-        setSubTotal(0);
-        setItemsQuantity(0);
+        setItemsCart([])
+        setItemsQuantity(0)
+        setSubTotal(0)
     }
 
-    return <CartContext.Provider value={{ addItem, removeItem, subTotal, clear, itemsCart, itemsQuantity }}>
+    const removeItem = id => {
+        const selectRemoveItem = itemsCart.find(itemCart => itemCart.item.id === id);
+        setSubTotal(subTotal - (selectRemoveItem.item.price * selectRemoveItem.quantity))
+        setItemsQuantity(itemsQuantity - selectRemoveItem.quantity)
+        setItemsCart(itemsCart.filter((item) => item.item.id !== id));
+    }
+
+    useEffect(() => {
+        console.log('Carrito Actualizado:', itemsCart)
+    }, [itemsCart])
+
+    return <CartContext.Provider value={{itemsCart, addItem, clear, removeItem, subTotal, itemsQuantity}}>
         {props.children}
     </CartContext.Provider>
-
 }

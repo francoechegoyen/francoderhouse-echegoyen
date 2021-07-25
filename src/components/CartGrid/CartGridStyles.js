@@ -28,6 +28,10 @@ export const cartGridStyles = theme => {
             '&:hover':{
                 color: '#ff0000'
             }
+        },
+        messageOrder:{
+            marginTop: '15px',
+            textAlign: 'center'
         }
     })
 }

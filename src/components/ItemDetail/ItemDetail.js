@@ -7,7 +7,7 @@ import Card from '@material-ui/core/Card';
 import CardMedia from '@material-ui/core/CardMedia';
 import { ItemCount } from '../ItemCount/ItemCount';
 import { itemDetailStyles } from './ItemDetailStyles';
-import { FinishPurchaseButton } from '../FinalizarCompra/FinalizarCompra';
+import { FinishPurchaseButton } from '../../components/FinishPurchaseButton/FinishPurchaseButton.js';
 import { CartContext } from '../../Context/CartContext';
 
 const useStyle = makeStyles((theme) => itemDetailStyles(theme));
