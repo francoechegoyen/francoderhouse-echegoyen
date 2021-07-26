@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/francoderhouse-echegoyen/static/css/main.365ddd9a.chunk.css",
+    "main.js": "/francoderhouse-echegoyen/static/js/main.d56b6b41.chunk.js",
+    "main.js.map": "/francoderhouse-echegoyen/static/js/main.d56b6b41.chunk.js.map",
+    "runtime-main.js": "/francoderhouse-echegoyen/static/js/runtime-main.3c412efe.js",
+    "runtime-main.js.map": "/francoderhouse-echegoyen/static/js/runtime-main.3c412efe.js.map",
+    "static/js/2.0b955ec7.chunk.js": "/francoderhouse-echegoyen/static/js/2.0b955ec7.chunk.js",
+    "static/js/2.0b955ec7.chunk.js.map": "/francoderhouse-echegoyen/static/js/2.0b955ec7.chunk.js.map",
+    "index.html": "/francoderhouse-echegoyen/index.html",
+    "static/css/main.365ddd9a.chunk.css.map": "/francoderhouse-echegoyen/static/css/main.365ddd9a.chunk.css.map",
+    "static/js/2.0b955ec7.chunk.js.LICENSE.txt": "/francoderhouse-echegoyen/static/js/2.0b955ec7.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.3c412efe.js",
+    "static/js/2.0b955ec7.chunk.js",
+    "static/css/main.365ddd9a.chunk.css",
+    "static/js/main.d56b6b41.chunk.js"
+  ]
+}
