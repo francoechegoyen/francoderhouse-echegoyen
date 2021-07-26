@@ -27,7 +27,8 @@ export const cartMessageStyles = theme => {
         },
         buttonContainer:{
             display: 'flex',
-            justifyContent: 'center'
+            justifyContent: 'center',
+            marginTop: '20px'
         }
     })
 }

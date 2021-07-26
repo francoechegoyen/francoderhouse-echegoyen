@@ -1,33 +1,44 @@
 export const NavBarStyles = theme => {
     return ({
-        container: {
+        root: {
+            flexGrow: 1,
+        },
+        appBar: {
+            backgroundColor: 'rgb(201, 122, 122)',
+            fontFamily: 'arial',
             padding: '0.5rem 0.8rem 0',
-            backgroundColor: 'rgb(201, 122, 122)'
+            boxShadow: '-2px 2px 7px 0px rgba(0,0,0,0.75)',
         },
         innerWrap: {
             display: 'flex',
             justifyContent: 'space-between',
             alignItems: 'center'
         },
-        logoCabeceraDesktop: {
+        logoContainerDesktop: {
             '@media (max-width: 800px)': {
                 display: 'none'
-            }
+            },
+            '& img:hover':{
+                transform: 'scale(1.1)',
+                transition: '0.3s'
+            },
         },
         listaContainerDesktop: {
             '@media (max-width: 800px)': {
                 display: 'none'
             }
         },
-        listaCabeceraDesktop: {
+
+        navbarList: {
             margin: '0.5rem 0',
             padding: '0',
             listStyle: 'none',
             display: 'flex',
             justifyContent: 'space-evenly',
-            fontWeight: '500',
+            fontWeight: '400',
+            fontSize:'1.2rem',
             '& li': {
-                padding: '0.5rem',
+                padding: '0.8rem',
                 color: '#fff',
                 cursor: 'pointer',
                 '& a':{
@@ -35,40 +46,33 @@ export const NavBarStyles = theme => {
                     color: 'inherit'
                 }
             
+            },
+            '& li:hover':{
+                transform: 'scale(1.05)',
+                transition: '0.5s ease-in-out',
+                color: '#fff',
+            },
+            '@media (max-width: 800px)': {
+                flexFlow: 'column nowrap'
             }
         },
-        logoCabeceraMobile: {
+        logoContainerMobile: {
             display: 'none',
             '@media (max-width: 800px)': {
-                display: 'flex'
+                display: 'flex',
             }
         },
         listaContainerMobile: {
             display: 'none',
             '@media (max-width: 800px)': {
-                display: 'flex'
+                display: 'flex',
+                backgroundColor: 'rgb(201, 122, 122)',
             },
             '& > button':{
                 border: 'none',
                 background: 'none',
                 color: 'rgba(0, 0, 0, 0.36)'
-                
             }
-        },
-                botones:{
-            color: '#7E7E7E',
-            fontSize: '1rem',
-            fontWeight: 400,
-            fontFamily: 'Arial',
-            '&:hover':{
-                backgroundColor: 'transparent',
-                textDecoration: 'underline'
-            },
-            textDecoration: 'none',
-            padding: '1rem',
-            textTransform: 'uppercase'
-        },
+        }
     })
-
-
 }

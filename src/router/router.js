@@ -4,6 +4,7 @@ import { ItemDetailContainer } from '../screens/ItemDetailContainer/ItemDetailCo
 import { ItemListContainer } from '../screens/ItemListContainer/ItemListContainer'
 import { NavBar } from '../components/NavBar/NavBar';
 import { Cart } from '../screens/Cart/Cart';
+import { Error } from '../screens/error/error';
 
 export const Router = () =>{
     return <BrowserRouter>
@@ -20,6 +21,9 @@ export const Router = () =>{
             </Route>
             <Route exact path="/cart">
                 <Cart/>
+            </Route>
+            <Route path="/*">
+                <Error/>
             </Route>
         </Switch>
     </BrowserRouter>

@@ -14,6 +14,11 @@ export const cartGridStyles = theme => {
                 backgroundColor: '#000',
             }
         },
+        generalContainer:{
+            display: 'flex',
+            justifyContent: 'center',
+            flexDirection: 'column'
+        },
         headerTable:{
             backgroundColor: '#e6e6e6'
         },
@@ -22,7 +27,7 @@ export const cartGridStyles = theme => {
             marginTop: '5%'
         },
         imgProducto:{
-            maxWidth: '8rem'
+            maxWidth: '9rem'
         },
         delete:{
             '&:hover':{

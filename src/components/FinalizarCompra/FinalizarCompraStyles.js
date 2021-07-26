@@ -29,7 +29,6 @@ export const finalizarCompraStyles = theme => {
                 color: '#FFFFFF',
                 backgroundColor: 'darkgreen',
             }
-
         },
         buttonCancel:{
             textDecoration: 'none',
