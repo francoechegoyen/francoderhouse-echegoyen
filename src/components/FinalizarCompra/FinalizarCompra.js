@@ -90,7 +90,7 @@ export const FinalizarCompra = props => {
                         <TextField id="standard-full-width" fullWidth name="numero" label="Número" required onChange={handleChange} />
                         <TextField id="standard-full-width" fullWidth name= "telefono" label="Teléfono" required onChange={handleChange}  />
                         <TextField id="standard-full-width" fullWidth label="Email" name= "email" type="email" required onChange={handleChange} />
-                        <Button type='submit' className={classes.buttonOk}>ACEPTAR</Button>
+                        <Button type='submit' className={classes.botonAceptarFormulario}>Aceptar</Button>
                     </form>
                 </CardContent>
             </Card>

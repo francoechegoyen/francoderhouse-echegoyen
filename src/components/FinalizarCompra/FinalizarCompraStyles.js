@@ -1,40 +1,11 @@
 export const finalizarCompraStyles = theme => {
     return({
-        generalContainer:{
+            botonAceptarFormulario:{
+            textDecoration: 'none',
             display: 'flex',
             justifyContent: 'center',
-            marginTop: '10px',
-            margin: '20px 0px',
-        },
-        container:{
-            display: 'flex',
-            flexDirection: 'row',
-            justifyContent: 'center',
-            margin: '20px 0px'
-        },
-        buttonAccept:{
-            textDecoration: 'none',
             borderRadius: '4px',
-            border: 'solid 1px black',
-            background: '#3acbf7',
-            fontFamily: 'Arial',
-            width: '15em',
-            color: 'black',
-            padding: '6px',
-            textTransform: 'uppercase',
-            textAlign: 'center',
-            margin:'10px',
-            fontSize: '0.875rem',
-            '&:hover':{
-                color: '#FFFFFF',
-                backgroundColor: 'darkgreen',
-            }
-        },
-        buttonCancel:{
-            textDecoration: 'none',
-            borderRadius: '4px',
-            border: 'solid 1px black',
-            background: 'rgb(201, 122, 122)',
+            background: '#558405',
             fontFamily: 'Arial',
             width: '10em',
             color: '#FFFFFF',
@@ -45,25 +16,7 @@ export const finalizarCompraStyles = theme => {
             fontSize: '0.875rem',
             '&:hover':{
                 color: '#FFFFFF',
-                backgroundColor: 'red',
-            },
-            buttonFormulario:{
-            textDecoration: 'none',
-            borderRadius: '4px',
-            border: 'solid 1px black',
-            background: 'rgb(201, 122, 122)',
-            fontFamily: 'Arial',
-            width: '10em',
-            color: '#FFFFFF',
-            padding: '6px',
-            textTransform: 'uppercase',
-            textAlign: 'center',
-            margin:'10px',
-            fontSize: '0.875rem',
-            '&:hover':{
-                color: '#FFFFFF',
-                backgroundColor: 'red',
-                }
+                backgroundColor: '#3D5F04',
 
         }}
     })
