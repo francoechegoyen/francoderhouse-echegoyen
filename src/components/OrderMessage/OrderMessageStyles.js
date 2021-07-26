@@ -7,18 +7,17 @@ export const orderMessageStyles = () => {
         buttons:{
             textDecoration: 'none',
             borderRadius: '4px',
-            border: 'solid 1px #5c4000',
-            fontFamily: 'Rubik',
-            width: '10em',
-            color: '#5c4000',
+            border: 'solid 1px #7577fa',
+            width: '12em',
+            color: '#7577fa',
             padding: '6px 8px',
             textTransform: 'uppercase',
             textAlign: 'center',
-            margin:'2.5px 0',
+            marginTop: '15px',
             fontSize: '0.875rem',
             '&:hover':{
                 color: '#FFFFFF',
-                backgroundColor: '#5c4000',
+                backgroundColor: '#7577fa',
             }
         },
         messageOrder:{
@@ -27,3 +26,4 @@ export const orderMessageStyles = () => {
         }
     })
 }
+

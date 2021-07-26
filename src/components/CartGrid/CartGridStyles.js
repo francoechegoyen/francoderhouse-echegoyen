@@ -20,7 +20,7 @@ export const cartGridStyles = theme => {
             flexDirection: 'column'
         },
         headerTable:{
-            backgroundColor: '#e6e6e6'
+            backgroundColor: '#fff'
         },
         tableContainer:{
             width: '80%',
