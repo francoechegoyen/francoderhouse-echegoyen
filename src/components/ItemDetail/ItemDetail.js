@@ -7,7 +7,7 @@ import Card from '@material-ui/core/Card';
 import CardMedia from '@material-ui/core/CardMedia';
 import { ItemCount } from '../ItemCount/ItemCount';
 import { itemDetailStyles } from './ItemDetailStyles';
-import { FinishPurchaseButton } from '../../components/FinishPurchaseButton/FinishPurchaseButton.js';
+import { BotonTerminarCancelar } from '../../components/BotonTerminarCancelar/BotonTerminarCancelar';
 import { CartContext } from '../../Context/CartContext';
 
 const useStyle = makeStyles((theme) => itemDetailStyles(theme));
@@ -57,7 +57,7 @@ export const ItemDetail = props => {
                 <Typography variant="h6" className={classes.detalle}> Stock disponible: {detalleProducto.stock}</Typography>
                 {
                     click ? 
-                    <FinishPurchaseButton clickCancelar={clickCancelar}/>
+                    <BotonTerminarCancelar clickCancelar={clickCancelar}/>
                     :
                     <ItemCount stock={detalleProducto.stock} valorInicial={1}  cantidadProducto={cantidadProducto} onAdd={onAdd}/>
                 }

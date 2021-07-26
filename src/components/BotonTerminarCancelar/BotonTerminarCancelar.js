@@ -2,10 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useHistory } from "react-router-dom";
 import { makeStyles } from '@material-ui/core/styles';
-import { finishPurchaseButtonStyles } from './FinishPurchaseButtonStyles';
+import { finishPurchaseButtonStyles } from './BotonTerminarCancelarStyles';
 
 const useStyle = makeStyles((theme) => finishPurchaseButtonStyles(theme));
-export const FinishPurchaseButton = props =>{
+export const BotonTerminarCancelar = props =>{
     const classes = useStyle();
     const {clickCancelar} = props;
     const history = useHistory();
