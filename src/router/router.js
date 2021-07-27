@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter, Switch, Route, redirect} from 'react-router-dom';
+import {BrowserRouter, Switch, Route, Redirect} from 'react-router-dom';
 import { ItemDetailContainer } from '../screens/ItemDetailContainer/ItemDetailContainer'
 import { ItemListContainer } from '../screens/ItemListContainer/ItemListContainer'
 import { NavBar } from '../components/NavBar/NavBar';
