@@ -18,7 +18,7 @@
 #### La librería extra que utilizada es Material UI : [https://material-ui.com](https://material-ui.com)
 
 ## Live Demo
-#### Se puede ver el proyecto en vivo aquí : [Ver proyecto](https://francoechegoyen.github.io/)
+#### Se puede ver el proyecto en vivo aquí : [Ver proyecto](https://francoechegoyen.github.io/francoderhouse-echegoyen)
 
 ## Instalación
 ```bash
