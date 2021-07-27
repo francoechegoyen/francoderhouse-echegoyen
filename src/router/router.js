@@ -1,14 +1,13 @@
 import React from 'react';
 import {BrowserRouter, Switch, Route, Redirect} from 'react-router-dom';
+import { ItemListContainer } from '../screens/ItemListContainer/ItemListContainer';
 import { ItemDetailContainer } from '../screens/ItemDetailContainer/ItemDetailContainer'
-import { ItemListContainer } from '../screens/ItemListContainer/ItemListContainer'
 import { NavBar } from '../components/NavBar/NavBar';
 import { Cart } from '../screens/Cart/Cart';
 import { Error } from '../screens/error/error';
 
 export const Router = () =>{
-    return 
-    <BrowserRouter>
+    return <BrowserRouter>
         <NavBar/>
         <Switch>
         <Redirect from="/francoderhouse-echegoyen" to="/" />
