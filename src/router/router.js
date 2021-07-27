@@ -7,10 +7,11 @@ import { Cart } from '../screens/Cart/Cart';
 import { Error } from '../screens/error/error';
 
 export const Router = () =>{
-    return <BrowserRouter>
+    return 
+    <Redirect from="/francoderhouse-echegoyen" to="/" />
+    <BrowserRouter>
         <NavBar/>
         <Switch>
-            <Redirect from="/francoderhouse-echegoyen" to="/" />
             <Route exact path="/">
                 <ItemListContainer/>
             </Route>
