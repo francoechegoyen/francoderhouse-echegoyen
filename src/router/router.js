@@ -7,7 +7,8 @@ import { Cart } from '../screens/Cart/Cart';
 import { Error } from '../screens/error/error';
 
 export const Router = () =>{
-    return <BrowserRouter>
+    return 
+    <BrowserRouter>
         <NavBar/>
         <Switch>
         <Redirect from="/francoderhouse-echegoyen" to="/" />
